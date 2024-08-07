@@ -1,0 +1,92 @@
+
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "name":"Daveed",
+    "password":"Daveed123",
+    "role":"Teacher"
+}
+
+### 
+
+POST http://localhost:3000/login
+Content-Type: application/json 
+
+{
+    "name":"Daveed",
+    "password":"Daveed123"
+}
+
+###
+
+
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+    "name":"Daveed",
+    "age":"23",
+    "gender":"Male",
+    "standard":"12",
+    "marks":"800",
+    "user_id":"1"
+}
+
+###
+
+GET http://localhost:3000/students
+
+### 
+
+PUT http://localhost:3000/students/1
+Content-Type: application/json
+
+{
+    "name":"DaveedGangi",
+    "age":"23",
+    "gender":"Male",
+    "standard":"12",
+    "marks":"800"
+}
+
+### 
+
+DELETE http://localhost:3000/students/1
+
+###
+
+POST http://localhost:3000/teachers
+Content-Type: application/json
+
+{
+    "name":"DaveedG",
+    "age":"23",
+    "gender":"Male",
+    "subject":"Maths",
+    "experience":"10",
+    "user_id":"1"
+
+}
+
+### 
+
+GET http://localhost:3000/teachers
+
+###
+
+PUT http://localhost:3000/teachers/1
+Content-Type: application/json
+
+{
+    "name":"DaveedGangi",
+    "age":"23",
+    "gender":"Male",
+    "subject":"Maths",
+    "experience":"4"
+}
+
+### 
+
+DELETE http://localhost:3000/teachers/1
+
