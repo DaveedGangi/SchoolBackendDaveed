@@ -95,11 +95,11 @@ const createUserQuery = `
        '${role}'
       );`;
     await db.run(createUserQuery);
-    response.send("User created successfully");
+    response.send({errorMessage:"User created successfully"});
   }
   else {
         
-    response.send("User already exists");
+    response.send({errorMessage:"User already exists"});
   }
   });
 
@@ -110,7 +110,7 @@ app.post("/login", async (request, response) => {
   const dbUser = await db.get(selectUserQuery);
   if (dbUser === undefined) {
     response.status(400);
-    response.send("Invalid user");
+    response.send({errorMessage:"Invalid user"});
   } else {
     const isPasswordMatched = await bcrypt.compare(password, dbUser.password);
     if (isPasswordMatched === true) {
@@ -122,7 +122,7 @@ app.post("/login", async (request, response) => {
       response.send({jwtToken:jwtToken,username:dbUser.name,role:dbUser.role,id:dbUser.id});
     } else {
       response.status(400);
-      response.send("Invalid password");
+      response.send({errorMessage:"Invalid password"});
     }
   }
 });
